@@ -1,0 +1,374 @@
+/* ================================== */
+/* 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS */
+/* ================================== */
+
+/* Importar fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800&display=swap');
+
+:root {
+    /* Cores Exatas da Descrição */
+    --bg-dark: #0A0A0A;                
+    --text-light: #E0E0E0;             
+    --text-grey: #A0A0A0;              
+    --accent-orange: #FF4F00;          
+    --accent-light-orange: #FFA500;    
+    --card-bg: #1A1A1A;                
+    
+    /* Tipografia */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    
+    /* Variável para largura máxima centralizada */
+    --max-content-width: 1400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ================================== */
+/* 2. NAVBAR (Cabeçalho) - AJUSTE DE CENTRALIZAÇÃO */
+/* ================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Centraliza a navbar no desktop */
+    max-width: var(--max-content-width); 
+    margin: 0 auto; 
+    padding: 20px 5%;
+    
+    background-color: var(--bg-dark); 
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar .logo {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--text-light);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: var(--text-grey);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--text-light);
+}
+
+.navbar nav a.active {
+    color: var(--accent-orange);
+}
+
+.btn-resume {
+    background: transparent;
+    border: 1px solid var(--text-grey);
+    color: var(--text-light) !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ================================== */
+/* 3. HERO SECTION (Layout e Conteúdo) - AJUSTE DE CENTRALIZAÇÃO */
+/* ================================== */
+
+.hero-section {
+    position: relative;
+    /* Garante altura total e centraliza verticalmente */
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center; /* Centraliza o container horizontalmente */
+    align-items: center; /* Centraliza o container verticalmente */
+    padding: 40px 0;
+    overflow: hidden;
+    font-size: 16px; 
+}
+
+.background-gradient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 1200px;
+    background: radial-gradient(circle, rgba(255, 79, 0, 0.15) 0%, rgba(10, 10, 10, 0) 60%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.content-container {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    width: 100%;
+    /* Limita o container principal e garante que ele fique no centro */
+    max-width: var(--max-content-width); 
+    margin: 0 auto; 
+    padding: 0 5%;
+    gap: 60px;
+}
+
+/* Título Principal */
+.role-title {
+    font-family: var(--font-secondary);
+    font-size: clamp(3rem, 5vw, 5rem); 
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.greeting {
+    font-size: 1.1em;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.highlight-name {
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--text-grey);
+    margin-bottom: 35px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 15px;
+}
+
+/* Botões de Ação */
+.btn-primary {
+    background: linear-gradient(90deg, var(--accent-light-orange), var(--accent-orange));
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 79, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary-icon {
+    background-color: var(--card-bg);
+    border: 1px solid var(--text-grey);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 1.4em;
+}
+
+/* Card de Depoimento */
+.testimonial-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 450px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-card .quote-icon {
+    position: relative;
+    font-size: 3.5em;
+    color: var(--accent-orange);
+    line-height: 0.5;
+    float: left;
+    margin-right: 10px;
+}
+
+.testimonial-card p {
+    font-size: 0.95em;
+    color: var(--text-grey);
+    margin-bottom: 20px;
+    overflow: hidden; 
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    border: 2px solid var(--accent-orange);
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--text-light);
+    margin-right: 5px;
+}
+
+.author-role {
+    font-size: 0.8em;
+    color: var(--text-grey);
+}
+
+/* ================================== */
+/* 4. IMAGEM E ÍCONES FLUTUANTES */
+/* ================================== */
+
+.image-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 60vh; 
+    height: 100%;
+}
+
+.main-avatar {
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+    z-index: 5;
+    display: block;
+}
+
+/* Elementos Gráficos (Raio/Flecha) */
+.graphic-bolt {
+    position: absolute;
+    width: 300px;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.top-right {
+    top: -50px;
+    right: -100px;
+    transform: rotate(15deg);
+}
+
+.bottom-left {
+    bottom: -50px;
+    left: -100px;
+    transform: rotate(-30deg) scale(0.7);
+}
+
+/* Ícones Flutuantes (Tecnologias) */
+.floating-icon {
+    position: absolute;
+    /* Garante escala proporcional */
+    width: clamp(50px, 4vmin, 65px); 
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 79, 0, 0.3);
+    z-index: 6; 
+    transition: transform 0.3s;
+}
+
+/* Posicionamento Específico dos Ícones */
+.icon-html { top: 10%; left: 25%; transform: rotate(10deg); width: clamp(60px, 5vmin, 70px); }
+.icon-css { top: 50%; left: 15%; transform: rotate(-20deg); }
+.icon-js { bottom: 5%; left: 35%; transform: rotate(5deg); }
+.icon-figma { top: 30%; right: 20%; transform: rotate(25deg); }
+
+/* Animação para Flutuação */
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(0, -15px); }
+    100% { transform: translate(0, 0); }
+}
+
+.floating-icon {
+    animation: float 4s ease-in-out infinite alternate;
+}
+.icon-css { animation-delay: 0.5s; }
+.icon-js { animation-delay: 1s; }
+.icon-figma { animation-delay: 1.5s; }
+
+/* ================================== */
+/* 5. RESPONSIVIDADE */
+/* ================================== */
+
+@media (max-width: 1100px) {
+    .content-container {
+        grid-template-columns: 1fr; 
+        gap: 50px;
+    }
+
+    .text-area {
+        order: 2; 
+    }
+    
+    .image-area {
+        order: 1; 
+        height: 50vh;
+    }
+    
+    .graphic-bolt.top-right { display: none; }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar nav {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .role-title {
+        font-size: clamp(2.5rem, 8vw, 3rem); 
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-secondary-icon {
+        width: 100%;
+    }
+}
