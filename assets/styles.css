@@ -19,7 +19,7 @@
     --font-secondary: 'Montserrat', sans-serif;
     
     /* Variável para largura máxima centralizada */
-    --max-content-width: 1400px;
+    --max-content-width: 100%;
 }
 
 * {
