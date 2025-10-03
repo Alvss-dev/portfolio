@@ -1,6 +1,4 @@
-/* ================================== */
-/* 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS */
-/* ================================== */
+
 
 /* Importar fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800&display=swap');
@@ -270,6 +268,7 @@ body {
     height: auto;
     z-index: 5;
     display: block;
+    
 }
 
 /* Elementos Gráficos (Raio/Flecha) */
